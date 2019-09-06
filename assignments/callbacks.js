@@ -62,12 +62,32 @@ console.log(result3);
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x * y);
 }
+
+const result4 = multiplyNums(
+  3,
+  4,
+  sum => `The sum of the two numbers multiplied is ${sum}.`
+);
+console.log(result4);
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  if (list.includes(item)) {
+    return cb(true);
+  } else {
+    return cb(false);
+  }
 }
+
+const result5 = contains(
+  'Pencil',
+  items,
+  value => `It is a ${value} statement that the item is in the array.`
+);
+console.log(result5);
 
 /* STRETCH PROBLEM */
 
