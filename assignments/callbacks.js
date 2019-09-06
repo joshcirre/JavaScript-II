@@ -75,6 +75,12 @@ console.log(result4);
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+
+  for (let i = 0; i < list.length; i++) {
+    list[i] = list[i].toLowerCase();
+  }
+  item = item.toLowerCase();
+
   if (list.includes(item)) {
     return cb(true);
   } else {
