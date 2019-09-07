@@ -4,9 +4,17 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+let count = 0;
+
+increaseCount = () => count++;
+
+increaseCount();
+
+console.log(count);
+
+// I swear I didn't actually read ahead and just thought of a count function for the basic closure. :D - Josh Cirre
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
-
 
 // ==== Challenge 2: Implement a "counter maker" function ====
 const counterMaker = () => {
