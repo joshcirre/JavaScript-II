@@ -1,6 +1,6 @@
 // Create a higher order function and invoke the callback function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  Study both the problem and the solution to figure out the rest of the problems.
 
-const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum', 'Gum', 'Pen'];
 
 /* 
 
@@ -89,7 +89,7 @@ function contains(item, list, cb) {
 }
 
 const result5 = contains(
-  'Pencil',
+  'pEn',
   items,
   value => `It is a ${value} statement that the item is in the array.`
 );
@@ -101,4 +101,14 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  return cb(array.filter((item, index) => items.indexOf(item) === index));
 }
+
+const result6 = removeDuplicates(
+  items,
+  item => `There are no duplicates in this array: ${item}.`
+);
+
+console.log(result6);
+
+// Added an extra gum in items array to make sure.
